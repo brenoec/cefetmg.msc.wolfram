@@ -1,0 +1,75 @@
+
+\section{Introdução}
+
+Esta seção apresenta breve introdução ao Automato de Wolfram e suas quatro
+classes de evolução. A seção seguinte apresenta os materiais e método, seguido
+dos resultados, uma breve discussão.
+
+\subsection{Automato de Wolfram}
+
+O Automato de Wolfram \cite{2002:Wolfram:New:Science} é um automato
+unidimensional com $n$ sítios e $2$ estados possíveis ${0, 1}$. O estáto
+fututo de um sítio depende de seus $2$ vizinhos imediatos:
+
+\begin{equation}
+  x_{t+1} = r_i(x_t-1, x_t, x_t+1).
+\end{equation}
+
+\vspace{5mm}
+A tripla de sítios tem $2^3 = 8$ estados possíveis, já que cada sítio pode
+assumir $2$ valores. Como cada tripla pode levar a $2$ estados possíveis, temos
+um total de $2^8 = 256$ regras.
+
+\vspace{5mm}
+É prático e comum se referir a uma regra através da conversão da sequência de
+bits para base decimal. Assim como é prático e comum determinar a regra a partir
+de sua referência. A regra 00011110 é denominada regra 30, por exemplo, pois
+$00011110_2 = 30_{10}$.
+
+\begin{equation}
+  r_{30} = 00011110.
+  \label{eq:rule_30}
+\end{equation}
+
+\vspace{5mm}
+Para entender o que a equação \ref{eq:rule_30} significa, lê-se as relações
+abaixo da seguinte maneira: a tripla referente ao sítio $x$ à esquerda faz com
+que o próximo estado de $x$ seja o valor à direita:
+
+\begin{equation}
+  \begin{aligned}
+    111 \rightarrow 0 \\
+    110 \rightarrow 0 \\
+    101 \rightarrow 0 \\
+    100 \rightarrow 1 \\
+    011 \rightarrow 1 \\
+    010 \rightarrow 1 \\
+    001 \rightarrow 1 \\
+    000 \rightarrow 0
+  \end{aligned}
+  \label{eq:rule_30_values}
+\end{equation}
+
+\vspace{5mm}
+O número binário formado pelos valores das parcelas da direita, de cima para
+baixo, na equação \ref{eq:rule_30_values}, convertido para base decimal é 30.
+
+\subsection{Classes de Evolução}
+
+São quatro as classes de evolução possíveis para o Automato de Wolfram
+\cite{Atman:2002:Sistemas:Complexos}:
+
+\begin{itemize}
+  \item Evolução Homogênea: sítios permanecem em determinados estados de modo
+  estacionário, de modo que o sistema evolui para o mesmo estado a cada
+  iteração;
+
+  \item Evolução de Estruturas Periódicas: sítios alternam estados
+  periodicamente, de modo que a evolução do sistema é periódica;
+
+  \item Evolução Caótica: o sistema evolui de forma desordenada e não apresenta
+  padrões;
+
+  \item Evolução Complexa: o sistema apresenta estruturas complexas que evoluem
+  sem previsibilidade.
+\end{itemize}
